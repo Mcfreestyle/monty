@@ -13,6 +13,7 @@ void match_opcode(char *opcode, int nb_line, stack_t **top)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
