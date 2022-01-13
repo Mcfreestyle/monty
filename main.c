@@ -1,7 +1,5 @@
 #include "monty.h"
 
-stack_t *top;
-
 /**
  * main - read the Monty ByteCode file and execute its opcodes
  * @argc: number of arguments
@@ -11,6 +9,7 @@ stack_t *top;
  */
 int main(int argc, char **argv)
 {
+	stack_t *top;
 
 	if (argc != 2)
 	{
@@ -19,7 +18,7 @@ int main(int argc, char **argv)
 	}
 
 	top = NULL; /* create the stack */
-	parse_file(argv[1]);
+	parse_file(argv[1], &top);
 
 	free_stack(top);
 	return (0);
