@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 #define DELIMS " \t\n"
 
@@ -39,13 +40,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack_t *top;
+extern char *buff;
 
-void parse_file(char *file);
-void match_opcode(char *opcode, int nb_line, char *buff);
+void parse_file(char *file, stack_t **top);
+void match_opcode(char *opcode, int nb_line, stack_t **top);
 int my_getline(char **line, int *n, char **buff);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *top);
+
+int is_number(char *s);
 
 #endif
