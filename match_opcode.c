@@ -16,6 +16,7 @@ void match_opcode(char *opcode, int nb_line, stack_t **top)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
