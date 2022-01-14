@@ -13,7 +13,7 @@ void add(stack_t **stack, unsigned int line_number)
 	{
 		printf("L%d: can't add, stack too short\n", line_number);
 		free(buff);
-		free(*stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	top1 = *stack;
