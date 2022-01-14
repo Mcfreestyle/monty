@@ -24,3 +24,14 @@ void add(stack_t **stack, unsigned int line_number)
 	*stack = top2;
 	free(top1);
 }
+
+/**
+ * nop - it doesn't do anything
+ * @stack: address of the stack
+ * @line_number: line number of the opcode
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
